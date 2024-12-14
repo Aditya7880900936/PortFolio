@@ -8,6 +8,10 @@ import CanvasLoader from "../Components/CanvasLoader";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants";
 import Target from "../Components/Target";
+import ReactLogo from "../Components/ReactLogo";
+import Cube from "../Components/Cube";
+import Rings from "../Components/Rings";
+import HeroCamera from "../Components/HeroCamera";
 
 const Hero = () => {
 //   const controls = useControls('HackerRoom',{
@@ -69,6 +73,7 @@ const Hero = () => {
           <Canvas className="w-full h-full">
             <Suspense fallback={<CanvasLoader/>}>
             <PerspectiveCamera makeDefault position={[0, 0, 27]}/>
+            <HeroCamera isMobile={isMobile}>
             <HackerRoom
              scale={sizes.deskScale} 
             //  position={[0.9, -9.1, 4.1]} 
@@ -78,8 +83,13 @@ const Hero = () => {
             // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
             //  scale={[controls.scale, controls.scale, controls.scale]}
              />
+            </HeroCamera>
+
              <group>
                 <Target position={sizes.targetPosition} scale={2}/>
+                <ReactLogo position={sizes.reactLogoPosition}/>
+                <Cube position={sizes.cubePosition}/>
+                <Rings position={sizes.ringPosition}/>
              </group>
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
