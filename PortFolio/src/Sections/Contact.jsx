@@ -46,15 +46,15 @@ const Contact = () => {
   };
 
   return (
-    <section className="c-spacce my-20 " id="contact">
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
+    <section className="c-space my-20" id="contact">
+      <div className="relative min-h-screen mb-10 flex items-center justify-center flex-col">
         <img
           src="/assets/terminal.png"
           alt="terminal background"
           className="absolute inset-0 min-h-screen"
         />
-        <div className="contact-container pt-20">
-          <h3 className="head-text">Let's Connect</h3>
+        <div className="contact-container">
+          <h3 className="sm:text-3xl text-2xl font-semibold text-gray_gradient sm:pt-5">Let's Connect</h3>
           <p className="text-lg text-white-600 mt-3">
             Whether you're looking to build a new website, improve your existing
             platform , or bring a unique project to life ,I am Here to Help{" "}
@@ -62,9 +62,9 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="mt-12 flex flex-col space-y-7"
+            className="mt-12 sm:mt-6 flex flex-col space-y-4"
           >
-            <label className="space-y-3">
+            <label className="sm:space-y-2 space-y-3">
               <span className="field-label">Full Name</span>
               <input
                 type="text"
@@ -76,7 +76,7 @@ const Contact = () => {
                 placeholder="Enter your name"
               />
             </label>
-            <label className="space-y-3">
+            <label className="sm:space-y-2 space-y-3">
               <span className="field-label">Email</span>
               <input
                 type="email"
@@ -88,14 +88,14 @@ const Contact = () => {
                 placeholder="Enter your email"
               />
             </label>
-            <label className="space-y-3">
+            <label className="sm:space-y-2 space-y-3">
               <span className="field-label">Your Message</span>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 required
-                rows={5}
+                rows={4}
                 className="field-input"
                 placeholder="Enter your message"
               />
@@ -112,7 +112,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      <h3 className="head-text">Contact Me</h3>
+      {/* <h3 className="head-text">Contact Me</h3> */}
     </section>
   );
 };
